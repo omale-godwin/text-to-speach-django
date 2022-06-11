@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+
+{% block title %} | About Us {% endblock %}
+
+{% block content %}
+
+        <div  class="about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 ">
+                  <div class="about_box">
+                     <div class="titlepage">
+                        <h2>Let knowledge be more accessible</h2>
+                     </div>
+                     <p>WebReader is a text-to-speech widget you can add to your website to let your webpages talk for you.  </p>
+                     <a class="read_more">Let the website talk for you</a>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="about_img">
+                     <figure><img src="{% static 'images/about.png' %}" alt="#"/></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+{% endblock %}

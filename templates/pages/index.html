@@ -1,0 +1,136 @@
+{% extends 'base.html' %} {% block title %} | Welcome {% endblock %} {% load static %} {% block content %}
+<!-- Showcase -->
+ <section class="banner_main">
+         <div id="banner1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#banner1" data-slide-to="0" class="active"></li>
+               <li data-target="#banner1" data-slide-to="1"></li>
+               <li data-target="#banner1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>AI Voiceover Create Voiceovers From PDF In Minutes</span>
+                             
+                                 <p>Use text to speech to easily convert and download audio licensed for use on YouTube, eLearning platforms, or any other public use or redistribution purpose. </p>
+                                 <a href="#">PDF-READER</a> <a href="{% url 'pdfreader' %}">DOC-READER</a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="{% static 'images/intro1.svg' %}" style="height:500px" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Convert PDF to audio at</span>
+                                 <h1>anytime</h1>
+                                 <p>Listen to your school notes, office documents, and even printed books from your computer or mobile devices  </p>
+                                 <a href="{% url 'pdfreader' %}">PDF-READER us</a> <a href="{% url 'pdfreader' %}">PDF-READER us</a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure> <img src="{% static 'images/car.png' %}"alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Powerful Text-to-Speech for at home, work and school  </span>
+                                 <h1>on the go.</h1>
+                                 <p>Upload text and documents or convert to mp3 to listen to anywhere anytime.  </p>
+                               <a href="#">PDF-READER</a> <a href="{% url 'pdfreader' %}">DOC-READER</a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                   <figure> <img src="{% static 'images/logo-speeach.png' %}" style="height:500px" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+         </div>
+      </section>
+      <!-- end banner -->
+      <!-- services section -->
+      <div class="services">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our Services</h2>
+                     <p>It is a long established fact that a reader will be distracted by the readable</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div id="co_hocha" class="services_box">
+                     <div class="flex">
+                        <i><img src="{% static 'images/thr.png' %}" alt="#"/></i>
+                        <h3>architecture  DESIGN</h3>
+                     </div>
+                     <p>It is a long established fact that a reader will be distracted by the </p>
+                  </div>
+                  <a class="read_more margin_bottom1" href="#">See More</a>
+               </div>
+               <div class="col-md-4">
+                  <div id="co_hocha" class="services_box">
+                     <div class="flex">
+                        <i><img src="{% static 'images/thr1.png' %}" alt="#"/></i>
+                        <h3>RECONSTRUCTION </h3>
+                     </div>
+                     <p>It is a long established fact that a reader will be distracted by the </p>
+                  </div>
+                  <a class="read_more margin_bottom1" href="#">See More</a>
+               </div>
+               <div class="col-md-4">
+                  <div id="co_hocha" class="services_box">
+                     <div class="flex">
+                        <i><img src="{% static 'images/thr2.png' %}" alt="#"/></i>
+                        <h3>ELECTRICAL  SYSTEMS</h3>
+                     </div>
+                     <p>It is a long established fact that a reader will be distracted by the </p>
+                  </div>
+                  <a class="read_more" href="#">See More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section -->
+      <!-- about -->
+    
+ 
+   
+<!-- Alerts -->
+{% include 'partials/_alerts.html' %}
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends 'base.html' %} {% load static%}
+
+{% block title %} | User Dashboard {% endblock %}
+
+{% block content %}
+<section style="text-align: center" id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4" style="color:green">Text-To-Speach/Audio System</h1>
+          <p class="lead">Text-To-Speach/Audio System</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Alerts -->
+  {% include 'partials/_alerts.html' %}
+
+  {% comment %} <section id="dashboard" class="py-4">
+<div class="dropdownwrapper">
+    <div class="container">
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+
+   <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+    <div class="container">
+      <div class="row">
+     <div class="col-3">
+      <div class="frame">
+	<div class="center">
+		<div class="title">
+			<h1>Drop pdf file to upload</h1>
+		</div>
+
+		<div class="dropzone">
+			<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+			<input type="file" class="upload-input" />
+		</div>
+
+		<button type="button" class="btn" name="uploadbutton">Upload file</button>
+
+	</div>
+</div>
+     </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+
+
+   <div class="col-md-6 offset-md-3 mt-5">
+           <form method="POST" action="{% url 'pdfreader' %}" enctype="multipart/form-data" >
+        {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Select Voice Type. </label>
+            <select class="form-control" id="exampleFormControlSelect1" name="voice" required="required">
+              <option>male</option>
+              <option>female</option>
+              <option>child</option>
+            </select>
+          </div>
+          <hr>
+           <div class="form-group">
+            <label for="exampleFormControlSelect1">Select  Language To Translate </label>
+            <select class="form-control" id="exampleFormControlSelect1" name="language" required="required">
+              <option>ENGLISH</option>
+              <option>FRENCH</option>
+              <option>HAUSA</option>
+            </select>
+          </div>
+          <hr>
+          <div class="form-group mt-3">
+            <label class="mr-2">Upload your PDF-DOCUMENT:</label>
+            <input type="file" name="pdf">
+          </div>
+          <hr>
+          <button type="submit" class="btn btn-primary float-right p-5 m-5" style="width:200px">Submit</button>
+        </form>
+    </div> 
+    
+<br> <br><br><br>
+
+<div class="container">
+  <div id="glow" class="glow disable-animation">
+    <div id="player">
+      <span class="text">OMALE</span>
+      <br>
+      <span id="songName" class="text">Text-To-Speach</span>
+      <br>
+      <div class="playback_controls">
+        <button onclick="skip('prev')">
+          <i class="fa fa-fast-backward"></i>
+        </button>
+        <button onclick="playpause()">
+          <i class="fa fa-play"></i><i class="fa fa-pause"></i>
+        </button>
+        <button onclick="stop()">
+          <i class="fa fa-stop"></i>
+        </button>
+        <button onclick="skip('next')">
+          <i class="fa fa-fast-forward"></i>
+        </button>
+      </div>
+      <br>
+      <div id="seekbar">
+        <input type="range" oninput="setPos(this.value)" id="seek" value="0" max="">
+      </div>
+      <br>
+      <div class="volume_controls">
+        <button onclick="mute()">
+          <i id="mute" class="fa fa-volume-up"></i>
+        </button>
+        <input type="range" id="volume" oninput="setVolume(this.value)" min="0" max="1" step="0.01" value="1">
+      </div>
+    </div>
+
+    <div id="playlist" class="hide">
+      <span class="text">Playlist</span>
+      <div class="list-container">
+
+        <div id="list" class="scrollbar"></div>
+
+        <div class="add-list">
+          <input id="sourceUrl" type="text" placeholder="Enter audio url" />
+          <button onclick="addList()">+</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="playlist-btn">
+      <button onclick="togglePlaylist()">
+        <i id="playlist-btn" class="fa fa-list"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+  {% endblock %}
